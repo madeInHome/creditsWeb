@@ -1,0 +1,66 @@
+<div class="row" ng-controller="ClientRegisterCtrl">
+	<div class="col-md-12">
+  		<section class="panel">
+      		<header class="panel-heading">
+          		Registro
+      		</header>
+      	<div class="panel-body">
+        	<form role="form" name="registerForm" ng-model="registerForm" ng-submit="register()">
+            	<div class="form-group">
+              		<label for="idTypeOption">Tipo identificación</label>
+					<!-- Al igual que en el form, identificamos los campos del formulario con ng-model -->
+					<select ng-model="selectedIdType" class="form-control m-bot15">
+						<option ng-reflect-selected="true">Seleccione un valor</option>
+						<option ng-repeat="idType in listIdTypes" value="{{idType.id}}">{{idType.name}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<!-- Al igual que en el form, identificamos los campos del formulario con ng-model -->
+					<input type="text" class="form-control" id="username" ng-model="username" placeholder="Username" required>
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" id="password" ng-model="password" placeholder="Password" required>
+				</div>
+				<div class="form-group">
+					<label for="passwordC">Password Confirm</label>
+					<input type="password" class="form-control" id="passwordC" ng-model="passwordC" placeholder="Password Confirm" required>
+				</div>
+              	<button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+      </div>
+  </section>
+</div>
+
+
+
+<!-- Con ng-controller, le indicamos a la vista, cuál controlador utilizará -->
+<!--
+<div class="row" ng-controller="ClientRegisterCtrl">
+	<div class="col-md-6 text-center">
+
+		En angular para identificar los elementos en el controlador, los identificamos con ng-model 
+		<form name="registerForm" ng-model="registerForm" ng-submit="register()">
+			 Entre doble llaves se toman los parámetros desde el controlller. 
+			<div class="form-group">
+				<label for="idTypeOption">Tipo identificación</label>
+				 Al igual que en el form, identificamos los campos del formulario con ng-model 
+				<select ng-model="selectedIdType">
+					<option ng-repeat="idType in listIdTypes" value="{{idType.id}}">{{idType.name}}</option>
+				</select>
+			</div>
+			
+			
+			 Como el botón es de tipo submit, ejecuta la acción definida en el form 
+			<button type="submit" class="btn btn-default">Register</button>
+			 ng-if, hace un if para validar un campo definido en el controller 
+			<div ng-if="!passwordEquals" class="row">
+				No coinciden los passwords
+			</div>
+			
+		</form>
+	</div>
+</div>
+-->
