@@ -5,12 +5,14 @@ creditsApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('index', {
       url: "/index",
-      views: {
+      /*views: {
             // for column two, we'll define a separate controller 
             'loginLayout@index': { 
                 templateUrl: 'login.html'
             }
         }
+        */
+      templateUrl: "login.html"
     })
     .state('login', {
       url: "/login",
@@ -18,8 +20,17 @@ creditsApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('clientRegister', {
       url: "/clientRegister",
-      templateUrl: "templates/clientRegister.html"
+      views: {
+        '@' : {
+          templateUrl: 'layout.html'
+        },
+        'menu@clientRegister' : { templateUrl: 'templates/clientRegister.html',},
+      },
     })
+    /*.state('clientRegister', {
+      url: "/clientRegister",
+      templateUrl: "templates/clientRegister.html"
+    })*/
     .state('list', {
       url: "/list",
       templateUrl: "templates/list.html"
