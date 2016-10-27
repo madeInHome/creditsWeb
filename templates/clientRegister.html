@@ -1,3 +1,20 @@
+<!--main content start-->
+  <section id="main-content" ng-controller="MasterCtrl">>
+    <section class="wrapper">            
+      <!--overview start-->
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="page-header"><i class="fa fa-laptop"></i> Registro Cliente</h3>
+          <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a ng-click=goto('index')>Inicio</a></li>
+            <li><i class="fa fa-laptop"></i>Registro clientes</li>                
+          </ol>
+        </div>
+      </div>
+
+<div class="container">
+
+
 <div class="row" ng-controller="ClientRegisterCtrl">
 	<div class="col-md-12">
   		<section class="panel">
@@ -10,7 +27,8 @@
               		<label for="idTypeOption">Tipo identificación</label>
 					<!-- Al igual que en el form, identificamos los campos del formulario con ng-model -->
 					<select ng-model="selectedIdType" class="form-control m-bot15">
-						<option ng-reflect-selected="true">Seleccione un valor</option>
+						<option value="" disabled selected>Seleccione un valor</option>
+
 						<option ng-repeat="idType in listIdTypes" value="{{idType.id}}">{{idType.name}}</option>
 					</select>
 				</div>
@@ -34,6 +52,10 @@
   </section>
 </div>
 
+</div>
+
+</section>
+</section>
 
 
 <!-- Con ng-controller, le indicamos a la vista, cuál controlador utilizará -->

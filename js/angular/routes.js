@@ -20,6 +20,25 @@ creditsApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('clientRegister', {
       url: "/clientRegister",
+      templateUrl: "templates/clientRegister.html"
+    })
+    
+    /*
+    .state('clientRegister',{
+        url: "/clientRegister",
+        views: {
+          main: {
+            templateUrl: 'layout.html'
+          },
+          menu: {
+            templateUrl: 'templates/clientRegister.html'
+          },
+        }
+      })
+      */
+/*
+    .state('clientRegister', {
+      url: "/clientRegister",
       views: {
         '@' : {
           templateUrl: 'layout.html'
